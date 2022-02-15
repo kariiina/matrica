@@ -20,28 +20,25 @@ function getBelow22(number) {
 }
 
 function getDaySum(day) {
-  console.log("input day: " + day);
   return getBelow22(day);
 }
 
-//getDaySum(date);
-
-//getBelow22(month);
-
 function getYearSum(year) {
-  console.log("input year: " + year);
   const calcYear = year.toString();
   const yearResult =
     parseInt(calcYear[0]) +
     parseInt(calcYear[1]) +
     parseInt(calcYear[2]) +
     parseInt(calcYear[3]);
-  getBelow22(yearResult);
+  return getBelow22(yearResult);
 }
-//getYearSum(year);
 
 function getAllSum(day, month, year) {
-  return getBelow22(getDaySum(day) + getBelow22(month) + getYearSum(year));
+  const result = getBelow22(
+    getDaySum(day) + getBelow22(month) + getYearSum(year)
+  );
+  console.log(result);
+  return result;
 }
 
 getAllSum(date, month, year);
