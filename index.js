@@ -29,6 +29,7 @@ function getYearSum(year) {
 }
 
 function getAllSum(day, month, year) {
+  console.log(year);
   return getBelow22(getDaySum(day) + parseInt(month) + getYearSum(year));
 }
 
@@ -38,20 +39,23 @@ function getData() {
   inputDate = document.querySelector(".inputDate").value;
   console.log(inputDate);
 
-  const date = inputDate.slice(0, 2);
-  const month = inputDate.slice(3, 5);
-  const year = inputDate.slice(6, 8);
-  const dateToYearSum = getAllSum(date, month, year);
+  const date = parseInt(inputDate.slice(0, 2));
+  const month = parseInt(inputDate.slice(3, 5));
+  const year = parseInt(inputDate.slice(6, 10));
+  const dateToYearSum = parseInt(getAllSum(date, month, year));
+  const allSum = getBelow22(
+    getDaySum(date) + month + getYearSum(year) + dateToYearSum
+  );
 
   const result = `<p>Имя: ${inputName}</p>
       <p>Дата рождения: ${inputDate}</p>
 
       <p>Основные числа, энергии матрицы 
-      ${date}, 
+      ${getDaySum(date)}, 
       ${month}, 
-      ${year}, 
+      ${getYearSum(year)}, 
       ${dateToYearSum}, 
-      ${year}.
+      ${allSum}.
       </p>
 
       <p>Энергии, находящиеся от рождения в плюсовом состоянии. Это основной
@@ -68,7 +72,7 @@ function getData() {
       `;
 
   //const img = `<img src="${r.urls.regular}" alt="${r.alt_description}">`;
-  returnresultContainer.insertAdjacentHTML("beforeend", result);
+  return resultContainer.insertAdjacentHTML("beforeend", result);
   //resultContainer.append(...result);
 }
 

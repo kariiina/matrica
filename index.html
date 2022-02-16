@@ -13,18 +13,37 @@
 
 <body>
     <!-- d-flex justify-content-center -->
-    <div class="container">
+    <div class="container ">
         <form>
             <fieldset>
                 <legend>Матрица судьбы</legend>
-                <p>
-                    <label for="input">Имя: </label>
-                    <input type="text" id="input" class="inputName">
-                </p>
-                <p>
-                    <label for="date">Дата:</label>
-                    <input type="text" id="date" class="inputDate" pattern="[0-9]{2}.[0-9]{2}.[0-9]{4}">
-                </p>
+                <div class="row mb-3">
+                    <label for="input" class="col-sm-2 col-form-label">Имя: </label>
+                    <div class="col-sm-10">
+                        <input type="text" id="input" class="inputName">
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label for="date" class="col-sm-2 col-form-label">Дата:</label>
+                    <div class="col-sm-10">
+                        <input type="text" id="date" class="inputDate" pattern="[0-9]{2}.[0-9]{2}.[0-9]{4}">
+                    </div>
+                </div>
+                <div class="row mb-3 ">
+                    <label class="col-sm-2 col-form-label">Пол:</label>
+                    <div class="col-sm-10">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            мужской
+                        </label>
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"
+                            checked>
+                        <label class="form-check-label" for="flexRadioDefault2">
+                            женский
+                        </label>
+                    </div>
+                </div>
+
             </fieldset>
         </form>
 
