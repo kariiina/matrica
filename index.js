@@ -1,13 +1,12 @@
-//const inputDate = document.querySelector("#date");
-//const inputDate = inputField.querySelector("input[type=date]");
+// Parameters
+let inputName = "";
+let inputDate = "";
 
-const today = new Date();
+const resultContainer = document.querySelector(".result");
 
-const date = today.getDate();
-const month = today.getMonth();
-const year = today.getFullYear();
-
-function getBelow22(number) {
+// Functions
+function getBelow22(inputNumber) {
+  let number = parseInt(inputNumber);
   if (number > 22) {
     const calcNumber = number.toString();
     number = parseInt(calcNumber[0]) + parseInt(calcNumber[1]);
@@ -16,7 +15,7 @@ function getBelow22(number) {
 }
 
 function getDaySum(day) {
-  return getBelow22(parseInt(day));
+  return getBelow22(day);
 }
 
 function getYearSum(year) {
@@ -30,32 +29,30 @@ function getYearSum(year) {
 }
 
 function getAllSum(day, month, year) {
-  const result = getBelow22(
-    getDaySum(day) + getBelow22(month) + getYearSum(year)
-  );
-  return result;
+  return getBelow22(getDaySum(day) + parseInt(month) + getYearSum(year));
 }
-
-getAllSum(date, month, year);
-
-//console.log(document.querySelector('.inputName'));
-let inputName = "";
-let inputDate = "";
-
-const resultContainer = document.querySelector(".result");
 
 function getData() {
   resultContainer.innerHTML = "";
   inputName = document.querySelector(".inputName").value;
   inputDate = document.querySelector(".inputDate").value;
-  //console.log(inputDate.slice(3,2));
+  console.log(inputDate);
+
+  const date = inputDate.slice(0, 2);
+  const month = inputDate.slice(3, 5);
+  const year = inputDate.slice(6, 8);
+  const dateToYearSum = getAllSum(date, month, year);
 
   const result = `<p>Имя: ${inputName}</p>
       <p>Дата рождения: ${inputDate}</p>
 
       <p>Основные числа, энергии матрицы 
-      ${getDaySum(inputDate.slice(0, 2))}, 
-      ${getBelow22(inputDate.slice(3, 2))}, 6, 18, 9.</p>
+      ${date}, 
+      ${month}, 
+      ${year}, 
+      ${dateToYearSum}, 
+      ${year}.
+      </p>
 
       <p>Энергии, находящиеся от рождения в плюсовом состоянии. Это основной
       ресурс человека, который будет помогать справляться с трудностями и
@@ -71,12 +68,11 @@ function getData() {
       `;
 
   //const img = `<img src="${r.urls.regular}" alt="${r.alt_description}">`;
-  resultContainer.insertAdjacentHTML("beforeend", result);
+  returnresultContainer.insertAdjacentHTML("beforeend", result);
   //resultContainer.append(...result);
-
-  return 1;
 }
 
+// EvenListeners
 const button = document.querySelector("button");
 button.addEventListener("click", () => {
   getData();
