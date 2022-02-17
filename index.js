@@ -4,7 +4,6 @@ let inputDate = "";
 let inputGender = "";
 
 const resultContainer = document.querySelector(".result");
-const firstResultTable = document.querySelector(".firstColumn");
 
 // Functions
 function getBelow22(inputNumber) {
@@ -49,7 +48,7 @@ function showData(data, key) {
   //console.log("showData in grid: " + data);
   for (let d of data[key]) {
     let tableColumn = `<li>${d}</li>`;
-    firstResultTable.insertAdjacentHTML("afterbegin", tableColumn);
+    resultContainer.insertAdjacentHTML("afterbegin", tableColumn);
   }
 }
 
