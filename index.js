@@ -4,6 +4,8 @@ let inputDate = "";
 let inputGender = "";
 
 const resultContainer = document.querySelector(".result");
+const beforeFirstParagraph = document.querySelector(".beforeFirstParagraph");
+const fPfirstColumn = document.querySelector(".firstParagraph-firstColumn");
 
 // Functions
 function getBelow22(inputNumber) {
@@ -44,11 +46,11 @@ function getAllSum(calcDay, calcMonth, calcYear) {
 // };
 // jsonToObj();
 
-function showData(data, key) {
+function showData(data, key, element) {
   //console.log("showData in grid: " + data);
   for (let d of data[key]) {
     let tableColumn = `<li>${d}</li>`;
-    resultContainer.insertAdjacentHTML("afterbegin", tableColumn);
+    element.insertAdjacentHTML("afterbegin", tableColumn);
   }
 }
 
@@ -79,7 +81,7 @@ async function getData() {
   const res = await fetch(url);
   const data = await res.json();
 
-  const result = `
+  const pBeforeFirstParagraph = `
   <p>Имя: ${inputName}</p>
   <p>Дата рождения: ${inputDate}</p>
   <p>Основные числа, энергии матрицы
@@ -88,36 +90,34 @@ async function getData() {
       ${calcYear},
       ${dateToYearSum},
       ${allSum}.
-  </p>
-  <p>Энергии, находящиеся от рождения в плюсовом состоянии. Это основной
-      ресурс человека, который будет помогать справляться с трудностями и
-      достигать целей.</p>
-  <table>
-      <tr>
-          <td>
-              <ul>${showData(data, "1plus")}</ul>
-          </td>
-          <td>
-              <ul>${showData(data, "1minus")}</ul>
-          </td>
-      </tr>
-  </table>
-  <p>Энергии от рождения в самом минусовом состоянии. В течение жизни
-      человек через события, отношения, поступки выводит их в плюс. По этим
-      энергиям будут проходить повторяющиеся события.</p>
-  ${calcYear},
-  ${dateToYearSum}
-  <p>Личная сила. Необходимо раскрывать в себе качества по данной энергии,
-      чтобы реализоваться в социуме. От рождения нейтральна.</p>
-  ${allSum}
-  `;
+  </p>`;
 
-  return resultContainer.insertAdjacentHTML("beforeend", result);
+  const fTableFcolumn = `${showData(data, "1plus", fPfirstColumn)}`;
+  // <p></p>
+  // <table>
+  //     <tr>
+  //         <td>
+  //             <ul></ul>
+  //         </td>
+  //         <td>
+  //             <ul>${showData(data, "1minus")}</ul>
+  //         </td>
+  //     </tr>
+  // </table>
+  // <p></p>
+  // ${calcYear},
+  // ${dateToYearSum}
+  // <p></p>
+  // ${allSum}
+
+  beforeFirstParagraph.insertAdjacentHTML("beforeend", pBeforeFirstParagraph);
+  fPfirstColumn.insertAdjacentHTML("beforeend", fTableFcolumn);
+  //return true;
 }
 
 //clear representaion for result part
 function resetData() {
-  resultContainer.innerHTML = "";
+  //resultContainer.innerHTML = "";
 }
 
 // EvenListeners
