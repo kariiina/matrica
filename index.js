@@ -47,11 +47,7 @@ function getAllSum(calcDay, calcMonth, calcYear) {
 function showData(data, key) {
   console.log("showData in grid: " + data);
   for (let d of data[key]) {
-    const tableColumn = `
-    <ul>
-    <li>${d}</li>
-    </ul>
-    `;
+    let tableColumn = `<li>${d}</li>`;
     resultContainer.insertAdjacentHTML("beforeend", tableColumn);
   }
 }
@@ -82,7 +78,6 @@ async function getData() {
   const url = "./data.json";
   const res = await fetch(url);
   const data = await res.json();
-  showData(data, "1plus");
 
   const result = `<p>Имя: ${inputName}</p>
       <p>Дата рождения: ${inputDate}</p>
@@ -97,14 +92,17 @@ async function getData() {
       <p>Энергии, находящиеся от рождения в плюсовом состоянии. Это основной
       ресурс человека, который будет помогать справляться с трудностями и
       достигать целей.</p>
-    
-
+      
       <table>
       <tr>
-        <td></td>
-        <td> </td>
+        <td>
+          <ul>${showData(data, "1plus")}</ul>
+        </td>    
+        <td>
+          <ul>${showData(data, "1minus")}</ul>
+        </td>
       </tr>
-    </table>     
+      </table>     
       <p>Энергии от рождения в самом минусовом состоянии. В течение жизни
       человек через события, отношения, поступки выводит их в плюс. По этим
       энергиям будут проходить повторяющиеся события.</p>
@@ -115,7 +113,7 @@ async function getData() {
       ${allSum}
       `;
 
-  return null; //resultContainer.insertAdjacentHTML("beforeend", result);
+  return resultContainer.insertAdjacentHTML("beforeend", result);
 }
 
 //clear representaion for result part
