@@ -1,6 +1,7 @@
 // Parameters
 let inputName = "";
 let inputDate = "";
+let inputGender = "";
 
 const resultContainer = document.querySelector(".result");
 
@@ -48,9 +49,12 @@ const jsonToObj = async () => {
 jsonToObj();
 
 function getData() {
-  resultContainer.innerHTML = "";
+  resetData();
+
+  //get input values
   inputName = document.querySelector(".inputName").value;
   inputDate = document.querySelector(".inputDate").value;
+  inputGender = document.querySelector(".inputGender").value;
   console.log(inputDate);
 
   const date = parseInt(inputDate.slice(0, 2));
@@ -90,8 +94,18 @@ function getData() {
   //resultContainer.append(...result);
 }
 
+//clear representaion for result part
+function resetData() {
+  resultContainer.innerHTML = "";
+}
+
 // EvenListeners
-const button = document.querySelector("button");
-button.addEventListener("click", () => {
+const calculateButton = document.querySelector(".calculate");
+calculateButton.addEventListener("click", () => {
   getData();
+});
+
+const resetButton = document.querySelector(".reset");
+resetButton.addEventListener("click", () => {
+  resetData();
 });
