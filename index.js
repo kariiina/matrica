@@ -30,7 +30,6 @@ function getYearSum(year) {
 }
 
 function getAllSum(day, month, year) {
-  console.log(year);
   return getBelow22(getDaySum(day) + parseInt(month) + getYearSum(year));
 }
 
@@ -41,13 +40,12 @@ const getJsonData = fetch("./data.json")
   });
 
 // const obj = JSON.parse(jsonData);
-// console.log(obj)
 const jsonToObj = async () => {
   const jsonObj = await getJsonData;
   console.log(jsonObj);
   return jsonObj;
 };
-jsonToObj();
+//jsonToObj();
 
 //console.log(jsonToObj[name]);
 
@@ -58,7 +56,9 @@ function getData() {
   inputName = document.querySelector(".inputName").value;
   inputDate = document.querySelector(".inputDate").value;
   inputGender = document.querySelector(".inputGender:checked").value;
-  console.log(`${inputName}, ${inputDate}, ${inputGender}`);
+  console.log(
+    `Input values: ${inputName}(name), ${inputDate}(date), ${inputGender}(gender)`
+  );
 
   const date = parseInt(inputDate.slice(0, 2));
   const month = parseInt(inputDate.slice(3, 5));
