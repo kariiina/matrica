@@ -45,8 +45,11 @@ const getJsonData = fetch("./data.json")
 const jsonToObj = async () => {
   const jsonObj = await getJsonData;
   console.log(jsonObj);
+  return jsonObj;
 };
 jsonToObj();
+
+//console.log(jsonToObj[name]);
 
 function getData() {
   resetData();
@@ -54,8 +57,8 @@ function getData() {
   //get input values
   inputName = document.querySelector(".inputName").value;
   inputDate = document.querySelector(".inputDate").value;
-  inputGender = document.querySelector(".inputGender").value;
-  console.log(inputDate);
+  inputGender = document.querySelector(".inputGender:checked").value;
+  console.log(`${inputName}, ${inputDate}, ${inputGender}`);
 
   const date = parseInt(inputDate.slice(0, 2));
   const month = parseInt(inputDate.slice(3, 5));
