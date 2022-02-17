@@ -1,3 +1,29 @@
 .container {
   padding-top: 20px;
 }
+.btn {
+ margin: 0 5px; 
+}
+table, th, td {
+  border:1px solid black;
+ 
+}
+table {
+  width: 100%
+}
+@page {
+  size: A4;
+  margin: 0;
+}
+@media print {
+  html, body {
+    width: 210mm;
+    height: 297mm;
+  }
+}
+body {
+  background-image:  url(images/background.svg);
+  background-size:   cover;                      /* <------ */
+  background-repeat: no-repeat;
+  background-position: center center;            /* optionally, center the image */
+}

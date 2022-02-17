@@ -4,6 +4,7 @@ let inputDate = "";
 let inputGender = "";
 
 const resultContainer = document.querySelector(".result");
+const firstResultTable = document.querySelector(".firstColumn");
 
 // Functions
 function getBelow22(inputNumber) {
@@ -45,10 +46,10 @@ function getAllSum(calcDay, calcMonth, calcYear) {
 // jsonToObj();
 
 function showData(data, key) {
-  console.log("showData in grid: " + data);
+  //console.log("showData in grid: " + data);
   for (let d of data[key]) {
     let tableColumn = `<li>${d}</li>`;
-    resultContainer.insertAdjacentHTML("beforeend", tableColumn);
+    firstResultTable.insertAdjacentHTML("afterbegin", tableColumn);
   }
 }
 
@@ -79,39 +80,38 @@ async function getData() {
   const res = await fetch(url);
   const data = await res.json();
 
-  const result = `<p>Имя: ${inputName}</p>
-      <p>Дата рождения: ${inputDate}</p>
-
-      <p>Основные числа, энергии матрицы 
-      ${calcDay}, 
-      ${calcMonth}, 
-      ${calcYear}, 
-      ${dateToYearSum}, 
+  const result = `
+  <p>Имя: ${inputName}</p>
+  <p>Дата рождения: ${inputDate}</p>
+  <p>Основные числа, энергии матрицы
+      ${calcDay},
+      ${calcMonth},
+      ${calcYear},
+      ${dateToYearSum},
       ${allSum}.
-      </p>
-      <p>Энергии, находящиеся от рождения в плюсовом состоянии. Это основной
+  </p>
+  <p>Энергии, находящиеся от рождения в плюсовом состоянии. Это основной
       ресурс человека, который будет помогать справляться с трудностями и
       достигать целей.</p>
-      
-      <table>
+  <table>
       <tr>
-        <td>
-          <ul>${showData(data, "1plus")}</ul>
-        </td>    
-        <td>
-          <ul>${showData(data, "1minus")}</ul>
-        </td>
+          <td>
+              <ul>${showData(data, "1plus")}</ul>
+          </td>
+          <td>
+              <ul>${showData(data, "1minus")}</ul>
+          </td>
       </tr>
-      </table>     
-      <p>Энергии от рождения в самом минусовом состоянии. В течение жизни
+  </table>
+  <p>Энергии от рождения в самом минусовом состоянии. В течение жизни
       человек через события, отношения, поступки выводит их в плюс. По этим
       энергиям будут проходить повторяющиеся события.</p>
-      ${calcYear}, 
-      ${dateToYearSum}
-      <p>Личная сила. Необходимо раскрывать в себе качества по данной энергии,
-      чтобы реализоваться в социуме. От рождения нейтральна.</p>     
-      ${allSum}
-      `;
+  ${calcYear},
+  ${dateToYearSum}
+  <p>Личная сила. Необходимо раскрывать в себе качества по данной энергии,
+      чтобы реализоваться в социуме. От рождения нейтральна.</p>
+  ${allSum}
+  `;
 
   return resultContainer.insertAdjacentHTML("beforeend", result);
 }
