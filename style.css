@@ -1,7 +1,7 @@
 body {
-  font-family: "Inter", sans-serif;
+  font-family: "Times New Roman";
   font-weight: 400;
-  font-size: 20px;
+  font-size: 24px;
   /* background-color: black;
   color: white; */
 }
@@ -25,6 +25,9 @@ table {
   html, body {
     width: 210mm;
     height: 297mm;
+    font-family: "Times New Roman";
+    font-weight: 400;
+    font-size: 12px;
   }
 }
 body {
