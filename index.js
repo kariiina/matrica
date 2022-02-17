@@ -116,5 +116,8 @@ calculateButton.addEventListener("click", () => {
 
 const resetButton = document.querySelector(".reset");
 resetButton.addEventListener("click", () => {
+  console.clear();
+  document.querySelector(".inputName").value = "";
+  document.querySelector(".inputDate").value = "";
   resetData();
 });
