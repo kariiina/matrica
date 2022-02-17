@@ -10,6 +10,7 @@ const fPsecondColumn = document.querySelector(".firstParagraph-secondColumn");
 const sPfirstColumn = document.querySelector(".secondParagraph-firstColumn");
 const sPsecondColumn = document.querySelector(".secondParagraph-secondColumn");
 const tPfirstColumn = document.querySelector(".thirdParagraph-firstColumn");
+const table = document.querySelector("table");
 
 // Functions
 function getBelow22(inputNumber) {
@@ -98,7 +99,13 @@ async function getData() {
 }
 
 function resetData() {
-  //resultContainer.innerHTML = "";
+  resultContainer.classList.toggle("active");
+  // beforeFirstParagraph.innerHTML = "";
+  // fPfirstColumn.innerHTML = "";
+  // fPsecondColumn.innerHTML = "";
+  // sPfirstColumn.innerHTML = "";
+  // sPsecondColumn.innerHTML = "";
+  // tPfirstColumn.innerHTML = "";
 }
 
 // EvenListeners

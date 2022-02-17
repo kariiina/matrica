@@ -1,3 +1,10 @@
+body {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  /* background-color: black;
+  color: white; */
+}
 .container {
   padding-top: 20px;
 }
@@ -5,8 +12,7 @@
  margin: 0 5px; 
 }
 table, th, td {
-  border:1px solid black;
- 
+  border:1px solid black; 
 }
 table {
   width: 100%
@@ -26,4 +32,7 @@ body {
   background-size:   cover;                      /* <------ */
   background-repeat: no-repeat;
   background-position: center center;            /* optionally, center the image */
+}
+active {
+  display: none;
 }
