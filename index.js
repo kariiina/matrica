@@ -15,22 +15,22 @@ function getBelow22(inputNumber) {
   return number;
 }
 
-function getDaySum(day) {
-  return getBelow22(day);
+function getDaySum(inputDay) {
+  return getBelow22(inputDay);
 }
 
-function getYearSum(year) {
-  const calcYear = year.toString();
+function getYearSum(inputYear) {
+  const yearToStriing = inputYear.toString();
   const yearResult =
-    parseInt(calcYear[0]) +
-    parseInt(calcYear[1]) +
-    parseInt(calcYear[2]) +
-    parseInt(calcYear[3]);
+    parseInt(yearToStriing[0]) +
+    parseInt(yearToStriing[1]) +
+    parseInt(yearToStriing[2]) +
+    parseInt(yearToStriing[3]);
   return getBelow22(yearResult);
 }
 
-function getAllSum(day, month, year) {
-  return getBelow22(getDaySum(day) + parseInt(month) + getYearSum(year));
+function getAllSum(calcDay, calcMonth, calcYear) {
+  return getBelow22(calcDay + calcMonth + calcYear);
 }
 
 const getJsonData = fetch("./data.json")
@@ -50,31 +50,36 @@ const jsonToObj = async () => {
 //console.log(jsonToObj[name]);
 
 function getData() {
+  //clear previous result
   resetData();
-
   //get input values
   inputName = document.querySelector(".inputName").value;
   inputDate = document.querySelector(".inputDate").value;
   inputGender = document.querySelector(".inputGender:checked").value;
-  console.log(
-    `Input values: ${inputName}(name), ${inputDate}(date), ${inputGender}(gender)`
-  );
-
-  const date = parseInt(inputDate.slice(0, 2));
-  const month = parseInt(inputDate.slice(3, 5));
-  const year = parseInt(inputDate.slice(6, 10));
-  const dateToYearSum = parseInt(getAllSum(date, month, year));
+  console.log(`Input values: ${inputName}, ${inputDate}, ${inputGender}`);
+  //calculate input values
+  const inputDay = parseInt(inputDate.slice(0, 2));
+  const inputMonth = parseInt(inputDate.slice(3, 5));
+  const inputYear = parseInt(inputDate.slice(6, 10));
+  //calculate result values
+  const calcDay = getDaySum(inputDay);
+  const calcMonth = inputMonth;
+  const calcYear = getYearSum(inputYear);
+  const dateToYearSum = parseInt(getAllSum(calcDay, calcMonth, calcYear));
   const allSum = getBelow22(
-    getDaySum(date) + month + getYearSum(year) + dateToYearSum
+    getDaySum(inputDay) + inputMonth + getYearSum(inputYear) + dateToYearSum
+  );
+  console.log(
+    `Calculated values: ${calcDay}, ${calcMonth}, ${calcYear}, ${dateToYearSum}, ${allSum}`
   );
 
   const result = `<p>Имя: ${inputName}</p>
       <p>Дата рождения: ${inputDate}</p>
 
       <p>Основные числа, энергии матрицы 
-      ${getDaySum(date)}, 
-      ${month}, 
-      ${getYearSum(year)}, 
+      ${calcDay}, 
+      ${calcMonth}, 
+      ${calcYear}, 
       ${dateToYearSum}, 
       ${allSum}.
       </p>
@@ -105,6 +110,7 @@ function resetData() {
 // EvenListeners
 const calculateButton = document.querySelector(".calculate");
 calculateButton.addEventListener("click", () => {
+  console.clear();
   getData();
 });
 
