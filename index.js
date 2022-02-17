@@ -85,26 +85,16 @@ async function getData() {
 
   const fTableFcolumn = `${showData(data, "1plus", fPfirstColumn)}`;
   const fTableScolumn = `${showData(data, "1minus", fPsecondColumn)}`;
-  // <p></p>
-  // <table>
-  //     <tr>
-  //         <td>
-  //             <ul></ul>
-  //         </td>
-  //         <td>
-  //             <ul>${showData(data, "1minus")}</ul>
-  //         </td>
-  //     </tr>
-  // </table>
-  // <p></p>
-  // ${calcYear},
-  // ${dateToYearSum}
-  // <p></p>
-  // ${allSum}
+  const sTableFcolumn = `${showData(data, "1plus", sPfirstColumn)}`;
+  const sTableScolumn = `${showData(data, "1minus", sPsecondColumn)}`;
+  const tTableFcolumn = `${showData(data, "1plus", tPfirstColumn)}`;
 
   beforeFirstParagraph.insertAdjacentHTML("beforeend", pBeforeFirstParagraph);
   fPfirstColumn.insertAdjacentHTML("beforeend", fTableFcolumn);
   fPsecondColumn.insertAdjacentHTML("beforeend", fTableScolumn);
+  sPfirstColumn.insertAdjacentHTML("beforeend", sTableFcolumn);
+  sPsecondColumn.insertAdjacentHTML("beforeend", sTableScolumn);
+  tPfirstColumn.insertAdjacentHTML("beforeend", tTableFcolumn);
 }
 
 function resetData() {
