@@ -6,6 +6,10 @@ let inputGender = "";
 const resultContainer = document.querySelector(".result");
 const beforeFirstParagraph = document.querySelector(".beforeFirstParagraph");
 const fPfirstColumn = document.querySelector(".firstParagraph-firstColumn");
+const fPsecondColumn = document.querySelector(".firstParagraph-secondColumn");
+const sPfirstColumn = document.querySelector(".secondParagraph-firstColumn");
+const sPsecondColumn = document.querySelector(".secondParagraph-secondColumn");
+const tPfirstColumn = document.querySelector(".thirdParagraph-firstColumn");
 
 // Functions
 function getBelow22(inputNumber) {
@@ -35,19 +39,7 @@ function getAllSum(calcDay, calcMonth, calcYear) {
   return getBelow22(calcDay + calcMonth + calcYear);
 }
 
-// const getJsonData = fetch("./data.json")
-//   .then((response) => response.json())
-//   .then((jsondata) => {
-//     return jsondata;
-//   });
-// const jsonToObj = async () => {
-//   const jsonObj = await getJsonData;
-//   return jsonObj;
-// };
-// jsonToObj();
-
 function showData(data, key, element) {
-  //console.log("showData in grid: " + data);
   for (let d of data[key]) {
     let tableColumn = `<li>${d}</li>`;
     element.insertAdjacentHTML("afterbegin", tableColumn);
@@ -55,18 +47,17 @@ function showData(data, key, element) {
 }
 
 async function getData() {
-  //clear previous result
   resetData();
-  //get input values
+
   inputName = document.querySelector(".inputName").value;
   inputDate = document.querySelector(".inputDate").value;
   inputGender = document.querySelector(".inputGender:checked").value;
   console.log(`Input values: ${inputName}, ${inputDate}, ${inputGender}`);
-  //calculate input values
+
   const inputDay = parseInt(inputDate.slice(0, 2));
   const inputMonth = parseInt(inputDate.slice(3, 5));
   const inputYear = parseInt(inputDate.slice(6, 10));
-  //calculate result values
+
   const calcDay = getDaySum(inputDay);
   const calcMonth = inputMonth;
   const calcYear = getYearSum(inputYear);
@@ -93,6 +84,7 @@ async function getData() {
   </p>`;
 
   const fTableFcolumn = `${showData(data, "1plus", fPfirstColumn)}`;
+  const fTableScolumn = `${showData(data, "1minus", fPsecondColumn)}`;
   // <p></p>
   // <table>
   //     <tr>
@@ -112,10 +104,9 @@ async function getData() {
 
   beforeFirstParagraph.insertAdjacentHTML("beforeend", pBeforeFirstParagraph);
   fPfirstColumn.insertAdjacentHTML("beforeend", fTableFcolumn);
-  //return true;
+  fPsecondColumn.insertAdjacentHTML("beforeend", fTableScolumn);
 }
 
-//clear representaion for result part
 function resetData() {
   //resultContainer.innerHTML = "";
 }
