@@ -7,9 +7,14 @@ const resultContainer = document.querySelector(".result");
 const beforeFirstParagraph = document.querySelector(".beforeFirstParagraph");
 const fPfirstColumn = document.querySelector(".firstParagraph-firstColumn");
 const fPsecondColumn = document.querySelector(".firstParagraph-secondColumn");
+const fPthirdColumn = document.querySelector(".firstParagraph-thirdColumn");
+const fPfourthColumn = document.querySelector(".firstParagraph-fourthColumn");
 const sPfirstColumn = document.querySelector(".secondParagraph-firstColumn");
 const sPsecondColumn = document.querySelector(".secondParagraph-secondColumn");
+const sPthirdColumn = document.querySelector(".secondParagraph-thirdColumn");
+const sPfourthColumn = document.querySelector(".secondParagraph-fourthColumn");
 const tPfirstColumn = document.querySelector(".thirdParagraph-firstColumn");
+const tPsecondColumn = document.querySelector(".thirdParagraph-secondColumn");
 const table = document.querySelector("table");
 
 // Functions
@@ -105,28 +110,58 @@ async function getData() {
     jsonKey(calcDay, inputGender, "minus"),
     fPsecondColumn
   )}`;
-  const sTableFcolumn = `${showData(
+  const fTableTcolumn = `${showData(
     data,
     jsonKey(calcMonth, inputGender, "plus"),
+    fPthirdColumn
+  )}`;
+  const fTableOcolumn = `${showData(
+    data,
+    jsonKey(calcMonth, inputGender, "minus"),
+    fPfourthColumn
+  )}`;
+  const sTableFcolumn = `${showData(
+    data,
+    jsonKey(calcYear, inputGender, "plus"),
     sPfirstColumn
   )}`;
   const sTableScolumn = `${showData(
     data,
-    jsonKey(calcMonth, inputGender, "minus"),
+    jsonKey(calcYear, inputGender, "minus"),
     sPsecondColumn
+  )}`;
+  const sTableTcolumn = `${showData(
+    data,
+    jsonKey(dateToYearSum, inputGender, "plus"),
+    sPthirdColumn
+  )}`;
+  const sTableOcolumn = `${showData(
+    data,
+    jsonKey(dateToYearSum, inputGender, "minus"),
+    sPfourthColumn
   )}`;
   const tTableFcolumn = `${showData(
     data,
     jsonKey(allSum, inputGender, "plus"),
     tPfirstColumn
   )}`;
+  const tTableScolumn = `${showData(
+    data,
+    jsonKey(allSum, inputGender, "minus"),
+    tPsecondColumn
+  )}`;
 
   beforeFirstParagraph.insertAdjacentHTML("beforeend", pBeforeFirstParagraph);
   fPfirstColumn.insertAdjacentHTML("beforeend", fTableFcolumn);
   fPsecondColumn.insertAdjacentHTML("beforeend", fTableScolumn);
+  fPthirdColumn.insertAdjacentHTML("beforeend", fTableTcolumn);
+  fPfourthColumn.insertAdjacentHTML("beforeend", fTableOcolumn);
   sPfirstColumn.insertAdjacentHTML("beforeend", sTableFcolumn);
   sPsecondColumn.insertAdjacentHTML("beforeend", sTableScolumn);
+  sPthirdColumn.insertAdjacentHTML("beforeend", sTableTcolumn);
+  sPfourthColumn.insertAdjacentHTML("beforeend", sTableOcolumn);
   tPfirstColumn.insertAdjacentHTML("beforeend", tTableFcolumn);
+  tPsecondColumn.insertAdjacentHTML("beforeend", tTableScolumn);
 }
 
 function resetData() {
