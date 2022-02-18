@@ -47,6 +47,13 @@ function showData(data, key, element) {
   }
 }
 
+const jsonKey = (calcNum, gender, string) => {
+  if (calcNum === 3 || calcNum === 4) {
+    return `${calcNum}${gender}${string}`;
+  }
+  return `${calcNum}${string}`;
+};
+
 async function getData() {
   resetData();
 
@@ -84,11 +91,31 @@ async function getData() {
       ${allSum}.
   </p>`;
 
-  const fTableFcolumn = `${showData(data, "1plus", fPfirstColumn)}`;
-  const fTableScolumn = `${showData(data, "1minus", fPsecondColumn)}`;
-  const sTableFcolumn = `${showData(data, "1plus", sPfirstColumn)}`;
-  const sTableScolumn = `${showData(data, "1minus", sPsecondColumn)}`;
-  const tTableFcolumn = `${showData(data, "1plus", tPfirstColumn)}`;
+  const fTableFcolumn = `${showData(
+    data,
+    jsonKey(calcDay, inputGender, "plus"),
+    fPfirstColumn
+  )}`;
+  const fTableScolumn = `${showData(
+    data,
+    jsonKey(calcDay, inputGender, "minus"),
+    fPsecondColumn
+  )}`;
+  const sTableFcolumn = `${showData(
+    data,
+    jsonKey(calcDay, inputGender, "plus"),
+    sPfirstColumn
+  )}`;
+  const sTableScolumn = `${showData(
+    data,
+    jsonKey(calcDay, inputGender, "minus"),
+    sPsecondColumn
+  )}`;
+  const tTableFcolumn = `${showData(
+    data,
+    jsonKey(calcDay, inputGender, "plus"),
+    tPfirstColumn
+  )}`;
 
   beforeFirstParagraph.insertAdjacentHTML("beforeend", pBeforeFirstParagraph);
   fPfirstColumn.insertAdjacentHTML("beforeend", fTableFcolumn);
