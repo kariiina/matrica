@@ -50,6 +50,7 @@ function showData(data, key, element) {
     let tableColumn = `<li>${d}</li>`;
     element.insertAdjacentHTML("afterbegin", tableColumn);
   }
+  return "";
 }
 
 const jsonKey = (calcNum, gender, string) => {
