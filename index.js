@@ -49,9 +49,13 @@ function showData(data, key, element) {
 
 const jsonKey = (calcNum, gender, string) => {
   if (calcNum === 3 || calcNum === 4) {
-    return `${calcNum}${string}${gender}`;
+    const result1 = `${calcNum}${string}${gender}`;
+    console.log(result1);
+    return result1;
   }
-  return `${calcNum}${string}`;
+  const result2 = `${calcNum}${string}`;
+  console.log(result2);
+  return result2;
 };
 
 async function getData() {
@@ -103,17 +107,17 @@ async function getData() {
   )}`;
   const sTableFcolumn = `${showData(
     data,
-    jsonKey(calcDay, inputGender, "plus"),
+    jsonKey(calcMonth, inputGender, "plus"),
     sPfirstColumn
   )}`;
   const sTableScolumn = `${showData(
     data,
-    jsonKey(calcDay, inputGender, "minus"),
+    jsonKey(calcMonth, inputGender, "minus"),
     sPsecondColumn
   )}`;
   const tTableFcolumn = `${showData(
     data,
-    jsonKey(calcDay, inputGender, "plus"),
+    jsonKey(allSum, inputGender, "plus"),
     tPfirstColumn
   )}`;
 
