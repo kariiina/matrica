@@ -49,7 +49,7 @@ function showData(data, key, element) {
 
 const jsonKey = (calcNum, gender, string) => {
   if (calcNum === 3 || calcNum === 4) {
-    return `${calcNum}${gender}${string}`;
+    return `${calcNum}${string}${gender}`;
   }
   return `${calcNum}${string}`;
 };
