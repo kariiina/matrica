@@ -51,3 +51,8 @@ td {
 .hidden {
   display: none;
 }
+
+legend {
+  font-weight: bold;
+  font-size: 48px;
+}
