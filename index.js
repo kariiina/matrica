@@ -16,6 +16,7 @@ const sPfourthColumn = document.querySelector(".secondParagraph-fourthColumn");
 const tPfirstColumn = document.querySelector(".thirdParagraph-firstColumn");
 const tPsecondColumn = document.querySelector(".thirdParagraph-secondColumn");
 const table = document.querySelector("table");
+const result = document.querySelector(".result");
 
 // Functions
 function getBelow22(inputNumber) {
@@ -178,14 +179,34 @@ function resetData() {
 // EvenListeners
 const calculateButton = document.querySelector(".calculate");
 calculateButton.addEventListener("click", () => {
+  if (
+    document.querySelector(".inputName").value.length == 0 ||
+    document.querySelector(".inputDate").value.length == 0
+  ) {
+    return;
+  }
+  result.classList.toggle("hidden");
   console.clear();
   getData();
 });
 
 const resetButton = document.querySelector(".reset");
 resetButton.addEventListener("click", () => {
+  result.classList.add("hidden");
   console.clear();
   document.querySelector(".inputName").value = "";
   document.querySelector(".inputDate").value = "";
   resetData();
 });
+
+// window.onload = (event) => {
+//result.classList.toggle("hidden");
+// }
+
+var today = new Date();
+var dd = String(today.getDate()).padStart(2, "0");
+var mm = String(today.getMonth() + 1).padStart(2, "0");
+var yyyy = today.getFullYear();
+
+today = dd + "." + mm + "." + yyyy;
+document.getElementById("date").placeholder = today;

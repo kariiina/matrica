@@ -9,20 +9,23 @@ body {
   padding-top: 20px;
 }
 .btn {
- margin: 0 5px; 
+  margin: 0 5px;
 }
-table, th, td {
-  border:1px solid black; 
+table,
+th,
+td {
+  border: 1px solid black;
 }
 table {
-  width: 100%
+  width: 100%;
 }
 @page {
   size: A4;
   margin: 0;
 }
 @media print {
-  html, body {
+  html,
+  body {
     width: 210mm;
     height: 297mm;
     font-family: "Times New Roman";
@@ -30,11 +33,11 @@ table {
     font-size: 12px;
   }
 }
-body {
-  background-image:  url(images/background.svg);
-  background-size:   cover;                      /* <------ */
+body1 {
+  background-image: url(images/background.svg);
+  background-size: cover; /* <------ */
   background-repeat: no-repeat;
-  background-position: center center;            /* optionally, center the image */
+  background-position: center center; /* optionally, center the image */
 }
 active {
   display: none;
@@ -44,4 +47,7 @@ td {
   /* border: 1px solid black; */
   width: 50%;
   /* overflow: hidden; */
+}
+.hidden {
+  display: none;
 }
