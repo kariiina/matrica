@@ -210,3 +210,14 @@ var yyyy = today.getFullYear();
 
 today = dd + "." + mm + "." + yyyy;
 document.getElementById("date").placeholder = today;
+
+//Auth
+var o = document.getElementById("protect-overlay");
+o.getElementsByTagName("form")[0].onsubmit = function () {
+  if (this.answer.value === atob("S2Fra2E4OW1hdHJpY2E=")) {
+    o.style.display = "none";
+  } else {
+    alert("Неправильный пароль!");
+  }
+  return false;
+};
