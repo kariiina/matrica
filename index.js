@@ -3,7 +3,6 @@ let inputName = "";
 let inputDate = "";
 let inputGender = "";
 
-const resultContainer = document.querySelector(".result");
 const beforeFirstParagraph = document.querySelector(".beforeFirstParagraph");
 const fPfirstColumn = document.querySelector(".firstParagraph-firstColumn");
 const fPsecondColumn = document.querySelector(".firstParagraph-secondColumn");
@@ -17,6 +16,7 @@ const tPfirstColumn = document.querySelector(".thirdParagraph-firstColumn");
 const tPsecondColumn = document.querySelector(".thirdParagraph-secondColumn");
 const table = document.querySelector("table");
 const result = document.querySelector(".result");
+const exportToWord = document.querySelector(".export");
 
 // Functions
 function getBelow22(inputNumber) {
@@ -164,16 +164,34 @@ async function getData() {
   sPfourthColumn.insertAdjacentHTML("beforeend", sTableOcolumn);
   tPfirstColumn.insertAdjacentHTML("beforeend", tTableFcolumn);
   tPsecondColumn.insertAdjacentHTML("beforeend", tTableScolumn);
+
+  exportToWord.classList.remove("hidden");
 }
 
 function resetData() {
-  resultContainer.classList.toggle("active");
-  // beforeFirstParagraph.innerHTML = "";
-  // fPfirstColumn.innerHTML = "";
-  // fPsecondColumn.innerHTML = "";
-  // sPfirstColumn.innerHTML = "";
-  // sPsecondColumn.innerHTML = "";
-  // tPfirstColumn.innerHTML = "";
+  exportToWord.classList.add("hidden");
+}
+
+function exportHTML() {
+  var header =
+    "<html xmlns:o='urn:schemas-microsoft-com:office:office' " +
+    "xmlns:w='urn:schemas-microsoft-com:office:word' " +
+    "xmlns='http://www.w3.org/TR/REC-html40'>" +
+    "<head><meta charset='utf-8'><title>Export HTML to Word Document with JavaScript</title></head><body>";
+  var footer = "</body></html>";
+  var sourceHTML = header + document.getElementById("word").innerHTML + footer;
+
+  var source =
+    "data:application/vnd.ms-word;charset=utf-8," +
+    encodeURIComponent(sourceHTML);
+  var fileDownload = document.createElement("a");
+  document.body.appendChild(fileDownload);
+  fileDownload.href = source;
+  fileDownload.download = `matrica_${
+    document.querySelector(".inputName").value
+  }.doc`;
+  fileDownload.click();
+  document.body.removeChild(fileDownload);
 }
 
 // EvenListeners
@@ -190,6 +208,10 @@ calculateButton.addEventListener("click", () => {
   getData();
 });
 
+exportToWord.addEventListener("click", () => {
+  exportHTML();
+});
+
 const resetButton = document.querySelector(".reset");
 resetButton.addEventListener("click", () => {
   result.classList.add("hidden");
@@ -200,7 +222,7 @@ resetButton.addEventListener("click", () => {
 });
 
 // window.onload = (event) => {
-//result.classList.toggle("hidden");
+//  result.classList.toggle("hidden");
 // }
 
 var today = new Date();
