@@ -66,8 +66,6 @@ const jsonKey = (calcNum, gender, string) => {
 };
 
 async function getData() {
-  resetData();
-
   inputName = document.querySelector(".inputName").value;
   inputDate = document.querySelector(".inputDate").value;
   inputGender = document.querySelector(".inputGender:checked").value;
@@ -195,12 +193,10 @@ async function getData() {
   document
     .querySelector(".allSumMinus")
     .insertAdjacentHTML("afterbegin", `${allSum} `);
-
-  exportToWord.classList.remove("hidden");
 }
 
 function resetData() {
-  exportToWord.classList.add("hidden");
+  location.reload();
 }
 
 function exportHTML() {
@@ -235,6 +231,8 @@ calculateButton.addEventListener("click", () => {
     return;
   }
   result.classList.toggle("hidden");
+  exportToWord.classList.remove("hidden");
+  calculateButton.classList.add("hidden");
   console.clear();
   getData();
 });
@@ -246,6 +244,8 @@ exportToWord.addEventListener("click", () => {
 const resetButton = document.querySelector(".reset");
 resetButton.addEventListener("click", () => {
   result.classList.add("hidden");
+  exportToWord.classList.add("hidden");
+  calculateButton.classList.remove("hidden");
   console.clear();
   document.querySelector(".inputName").value = "";
   document.querySelector(".inputDate").value = "";
