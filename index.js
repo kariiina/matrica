@@ -66,8 +66,6 @@ const jsonKey = (calcNum, gender, string) => {
 };
 
 async function getData() {
-  resetData();
-
   inputName = document.querySelector(".inputName").value;
   inputDate = document.querySelector(".inputDate").value;
   inputGender = document.querySelector(".inputGender:checked").value;
@@ -165,11 +163,40 @@ async function getData() {
   tPfirstColumn.insertAdjacentHTML("beforeend", tTableFcolumn);
   tPsecondColumn.insertAdjacentHTML("beforeend", tTableScolumn);
 
-  exportToWord.classList.remove("hidden");
+  document
+    .querySelector(".calcDayPlus")
+    .insertAdjacentHTML("afterbegin", `${calcDay} `);
+  document
+    .querySelector(".calcDayMinus")
+    .insertAdjacentHTML("afterbegin", `${calcDay} `);
+  document
+    .querySelector(".calcMonthPlus")
+    .insertAdjacentHTML("afterbegin", `${calcMonth} `);
+  document
+    .querySelector(".calcMonthMinus")
+    .insertAdjacentHTML("afterbegin", `${calcMonth} `);
+  document
+    .querySelector(".calcYearPlus")
+    .insertAdjacentHTML("afterbegin", `${calcYear} `);
+  document
+    .querySelector(".calcYearMinus")
+    .insertAdjacentHTML("afterbegin", `${calcYear} `);
+  document
+    .querySelector(".dateToYearSumPlus")
+    .insertAdjacentHTML("afterbegin", `${dateToYearSum} `);
+  document
+    .querySelector(".dateToYearSumMinus")
+    .insertAdjacentHTML("afterbegin", `${dateToYearSum} `);
+  document
+    .querySelector(".allSumPlus")
+    .insertAdjacentHTML("afterbegin", `${allSum} `);
+  document
+    .querySelector(".allSumMinus")
+    .insertAdjacentHTML("afterbegin", `${allSum} `);
 }
 
 function resetData() {
-  exportToWord.classList.add("hidden");
+  location.reload();
 }
 
 function exportHTML() {
@@ -204,6 +231,8 @@ calculateButton.addEventListener("click", () => {
     return;
   }
   result.classList.toggle("hidden");
+  exportToWord.classList.remove("hidden");
+  calculateButton.classList.add("hidden");
   console.clear();
   getData();
 });
@@ -215,6 +244,8 @@ exportToWord.addEventListener("click", () => {
 const resetButton = document.querySelector(".reset");
 resetButton.addEventListener("click", () => {
   result.classList.add("hidden");
+  exportToWord.classList.add("hidden");
+  calculateButton.classList.remove("hidden");
   console.clear();
   document.querySelector(".inputName").value = "";
   document.querySelector(".inputDate").value = "";
