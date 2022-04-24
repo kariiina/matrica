@@ -269,8 +269,21 @@ var o = document.getElementById("protect-overlay");
 o.getElementsByTagName("form")[0].onsubmit = function () {
   if (this.answer.value === atob("S2Fra2E4OW1hdHJpY2E=")) {
     o.style.display = "none";
+    localStorage.setItem("auth", this.answer.value);
   } else {
     alert("Неправильный пароль!");
   }
   return false;
 };
+
+// function setLocalStorage() {
+//   localStorage.setItem('lang', lang);
+// }
+// window.addEventListener('beforeunload', setLocalStorage) // сохранить данные только перед закрытием страницы
+
+function getLocalStorage() {
+  if (localStorage.getItem("auth") === atob("S2Fra2E4OW1hdHJpY2E=")) {
+    o.style.display = "none";
+  }
+}
+window.addEventListener("load", getLocalStorage);
