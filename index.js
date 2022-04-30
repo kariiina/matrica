@@ -165,34 +165,34 @@ async function getData() {
 
   document
     .querySelector(".calcDayPlus")
-    .insertAdjacentHTML("afterbegin", `${calcDay}`);
+    .insertAdjacentHTML("afterbegin", `${calcDay} `);
   document
     .querySelector(".calcDayMinus")
-    .insertAdjacentHTML("afterbegin", `${calcDay}`);
+    .insertAdjacentHTML("afterbegin", `${calcDay} `);
   document
     .querySelector(".calcMonthPlus")
-    .insertAdjacentHTML("afterbegin", `${calcMonth}`);
+    .insertAdjacentHTML("afterbegin", `${calcMonth} `);
   document
     .querySelector(".calcMonthMinus")
-    .insertAdjacentHTML("afterbegin", `${calcMonth}`);
+    .insertAdjacentHTML("afterbegin", `${calcMonth} `);
   document
     .querySelector(".calcYearPlus")
-    .insertAdjacentHTML("afterbegin", `${calcYear}`);
+    .insertAdjacentHTML("afterbegin", `${calcYear} `);
   document
     .querySelector(".calcYearMinus")
-    .insertAdjacentHTML("afterbegin", `${calcYear}`);
+    .insertAdjacentHTML("afterbegin", `${calcYear} `);
   document
     .querySelector(".dateToYearSumPlus")
-    .insertAdjacentHTML("afterbegin", `${dateToYearSum}`);
+    .insertAdjacentHTML("afterbegin", `${dateToYearSum} `);
   document
     .querySelector(".dateToYearSumMinus")
-    .insertAdjacentHTML("afterbegin", `${dateToYearSum}`);
+    .insertAdjacentHTML("afterbegin", `${dateToYearSum} `);
   document
     .querySelector(".allSumPlus")
-    .insertAdjacentHTML("afterbegin", `${allSum}`);
+    .insertAdjacentHTML("afterbegin", `${allSum} `);
   document
     .querySelector(".allSumMinus")
-    .insertAdjacentHTML("afterbegin", `${allSum}`);
+    .insertAdjacentHTML("afterbegin", `${allSum} `);
 
   //image
   document
