@@ -1,0 +1,640 @@
+.fixed-top {
+  background-color: #90c747 !important;
+  padding: 0px 10px 0px 10px;
+}
+.navbar-toggler:not(:disabled):not(.disabled) {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.buton_sus {
+  margin-top: 5px !important;
+  margin-bottom: 5px;
+  font-size: 90%;
+  line-height: 20px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.navbar-brand {
+  margin-right: 0px;
+}
+.main-div {
+  margin-top: 70px;
+}
+td.td_chakra {
+  text-align: left;
+}
+.health-map-table {
+  background: #f4f4f6 !important;
+  text-align: center;
+}
+.health-map-table td {
+  border-collapse: collapse;
+  border: 2px solid white !important;
+}
+.health-map-table tr:nth-child(2) {
+  background: #993399 !important;
+  background-color: #993399 !important;
+  color: white !important;
+}
+.health-map-table tr:nth-child(3) {
+  background: #3366ff !important;
+  color: white !important;
+}
+.health-map-table tr:nth-child(4) {
+  background: #33ccff !important;
+  color: white !important;
+}
+.health-map-table tr:nth-child(5) {
+  background: #66cc66 !important;
+  color: white !important;
+}
+.health-map-table tr:nth-child(6) {
+  background: #ffff99 !important;
+  color: black !important;
+}
+.health-map-table tr:nth-child(7) {
+  background: #ff9900 !important;
+  color: white !important;
+}
+.health-map-table tr:nth-child(8) {
+  background: #cc3333 !important;
+  color: white !important;
+}
+.health-map-table tr:nth-child(9) {
+  background: #cccccc !important;
+  color: black !important;
+  font-weight: bold !important;
+}
+.cls-1 {
+  isolation: isolate;
+}
+
+.cls-2 {
+  opacity: 0.75;
+}
+
+.cls-11,
+.cls-12,
+.cls-14,
+.cls-16,
+.cls-17,
+.cls-18,
+.cls-20,
+.cls-23,
+.cls-26,
+.cls-27,
+.cls-3,
+.cls-31,
+.cls-32,
+.cls-37,
+.cls-4,
+.cls-47,
+.cls-5,
+.cls-64,
+.cls-65,
+.cls-7 {
+  fill: none;
+}
+
+.cls-17,
+.cls-18,
+.cls-21,
+.cls-24,
+.cls-3,
+.cls-4,
+.cls-65 {
+  stroke: #201600;
+}
+
+.cls-11,
+.cls-12,
+.cls-14,
+.cls-16,
+.cls-17,
+.cls-18,
+.cls-20,
+.cls-21,
+.cls-23,
+.cls-24,
+.cls-26,
+.cls-27,
+.cls-3,
+.cls-31,
+.cls-32,
+.cls-37,
+.cls-4,
+.cls-47,
+.cls-5,
+.cls-7 {
+  stroke-miterlimit: 10;
+}
+
+.cls-21,
+.cls-24,
+.cls-3,
+.cls-5,
+.cls-7 {
+  stroke-width: 2px;
+}
+
+.cls-5 {
+  stroke: #4d59a1;
+}
+
+.cls-6 {
+  fill: #4d59a1;
+}
+
+.cls-7 {
+  stroke: #d24a43;
+}
+
+.cls-8 {
+  fill: #d24a43;
+}
+
+.cls-9 {
+  mix-blend-mode: multiply;
+}
+
+.cls-10 {
+  fill: #939;
+}
+
+.cls-11,
+.cls-64 {
+  stroke: #fff;
+  stroke-width: 3px;
+}
+
+.cls-12,
+.cls-27 {
+  stroke: #939;
+}
+
+.cls-13 {
+  fill: #36c;
+}
+
+.cls-14 {
+  stroke: #36c;
+}
+
+.cls-15 {
+  fill: #3eb4f0;
+}
+
+.cls-16 {
+  stroke: #3eb4f0;
+}
+
+.cls-17,
+.cls-18,
+.cls-27,
+.cls-31,
+.cls-32,
+.cls-37 {
+  stroke-width: 0.5px;
+}
+
+.cls-18 {
+  stroke-dasharray: 5.04 5.04;
+}
+
+.cls-19 {
+  fill: #d14a44;
+}
+
+.cls-20,
+.cls-31 {
+  stroke: #d14a44;
+}
+
+.cls-21,
+.cls-30,
+.cls-36,
+.cls-48,
+.cls-51,
+.cls-54,
+.cls-57,
+.cls-59 {
+  fill: #fff;
+}
+
+.cls-22 {
+  fill: #d88a4b;
+}
+
+.cls-23 {
+  stroke: #d88a4b;
+}
+
+.cls-24 {
+  fill: #f4f4f4;
+}
+
+.cls-25 {
+  fill: #f7de74;
+}
+
+.cls-26 {
+  stroke: #fbdb4a;
+}
+
+.cls-28,
+.cls-33,
+.cls-39,
+.cls-44,
+.cls-48,
+.cls-51 {
+  font-size: 10px;
+}
+
+.cls-28,
+.cls-30,
+.cls-34,
+.cls-35,
+.cls-36,
+.cls-39,
+.cls-43,
+.cls-51,
+.cls-54,
+.cls-55,
+.cls-56,
+.cls-57,
+.cls-58,
+.cls-59,
+.cls-60 {
+  font-family: Arial-BoldMT, Arial;
+}
+
+.cls-28,
+.cls-30,
+.cls-34,
+.cls-35,
+.cls-36,
+.cls-40,
+.cls-41,
+.cls-43,
+.cls-51,
+.cls-54,
+.cls-55,
+.cls-56,
+.cls-57,
+.cls-58,
+.cls-59,
+.cls-60 {
+  font-weight: 700;
+}
+
+.cls-29,
+.cls-35,
+.cls-41 {
+  letter-spacing: -0.01em;
+}
+
+.cls-30,
+.cls-43 {
+  font-size: 12px;
+}
+
+.cls-32 {
+  stroke: #000;
+}
+
+.cls-33,
+.cls-42,
+.cls-48 {
+  font-family: ArialMT, Arial;
+}
+
+.cls-36 {
+  font-size: 8px;
+}
+
+.cls-37 {
+  stroke: #c7504b;
+}
+
+.cls-38 {
+  fill: #c7504b;
+}
+
+.cls-44,
+.cls-61 {
+  font-family: Arial-ItalicMT, Arial;
+  font-style: italic;
+}
+
+.cls-45 {
+  letter-spacing: -0.01em;
+}
+
+.cls-46 {
+  letter-spacing: 0.01em;
+}
+
+.cls-47 {
+  stroke: #f7de74;
+}
+
+.cls-49 {
+  letter-spacing: -0.04em;
+}
+
+.cls-50 {
+  letter-spacing: -0.03em;
+}
+
+.cls-52 {
+  font-size: 41.04px;
+  fill: #9f6;
+  font-family: ArialNarrow, Arial;
+}
+
+.cls-53 {
+  fill: red;
+}
+
+.cls-54,
+.cls-55,
+.cls-56 {
+  font-size: 40px;
+}
+
+.cls-56 {
+  fill: #fcfcfc;
+}
+
+.cls-57,
+.cls-58 {
+  font-size: 18px;
+}
+
+.cls-59,
+.cls-60 {
+  font-size: 25px;
+}
+
+.cls-61 {
+  font-size: 6px;
+}
+
+.cls-62 {
+  letter-spacing: -0.07em;
+}
+
+.cls-63 {
+  fill: #201600;
+}
+.matrix-value-point {
+  text-anchor: middle;
+  alignment-baseline: middle;
+}
+#matrix-legend1 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding-top: 20px;
+  padding-right: 20px;
+}
+#matrix-legend {
+  position: absolute;
+  right: 10px;
+  font-size: 80%;
+  top: -35px;
+}
+#prednazn {
+  margin-bottom: 20px;
+}
+#prednazn td {
+  vertical-align: top;
+}
+
+#prednazn {
+  font-size: 70%;
+}
+#prednazn h3 {
+  font-size: 150%;
+}
+#main-div {
+  max-width: 1366px;
+}
+h2 {
+  font-size: 95%;
+}
+.health-map-table {
+  font-size: 70%;
+}
+.health-map-table td {
+  font-size: 120%;
+}
+
+.table td,
+.table th {
+  padding: 0.45rem;
+}
+#picture {
+  max-width: 95%;
+  margin-top: 20px;
+  position: relative;
+  left: -40px;
+  min-height: 95%;
+  height: 95%;
+  width: 95%;
+}
+/*#picture {
+    max-width: 90%;
+    margin-top: 20px;
+    position: relative;
+    left: -40px;
+    min-height: 90%;
+    height: 90%;
+    width: 90%;
+}*/
+
+#nebo1,
+#zemlia1,
+#for_self1,
+#male1,
+#female1,
+#socium1,
+#duhovnoe1,
+#planetarnoe1 {
+  border: 2px solid black;
+  border-radius: 50%;
+  width: 34px;
+  height: 34px;
+  display: inline-block;
+  text-align: center;
+  line-height: 30px;
+}
+/*#duhovnoe1, #planetarnoe1 {
+    display: block;
+    margin: 0 auto;
+    font-size: 230%;
+    width: 50px;
+    height: 50px;
+    line-height: 46px;
+    margin-top: 10px;
+}
+*/
+
+.nebo1_rosu_mare {
+  border: 2px solid red !important;
+  font-weight: bold !important;
+}
+
+h6 {
+  width: 100%;
+}
+
+h6.synastry_show {
+  font-size: 150%;
+}
+
+.synastry {
+  margin-top: -75px;
+}
+
+.ui-datepicker-trigger {
+  max-width: 25px;
+  margin-left: 5px;
+  top: -2px;
+  margin-top: -6px;
+}
+
+.print-under {
+  text-align: center;
+  background-color: #e4e4e4;
+  opacity: 0.6;
+}
+
+@media all and (max-width: 1280px) {
+  /*#matrix-legend { 
+        position: relative;
+        right: 0px;
+        margin-bottom: 20px;
+    }*/
+}
+
+/* mobil */
+@media screen and (max-width: 720px),
+  handheld and (max-width: 720px),
+  projection and (max-width: 720px),
+  tv and (max-width: 720px),
+  tty and (max-width: 720px) {
+  /*@media all and (max-width : 720px)  {*/
+  .table th {
+    padding: 0.35rem;
+    font-size: 80%;
+  }
+  #matrix-legend {
+    position: relative;
+    right: 0px;
+    margin-bottom: 20px;
+    top: 0px;
+  }
+  #picture {
+    margin-top: 0px;
+    left: 0px;
+    margin-top: -65px;
+    margin-bottom: 60px;
+  }
+  div.synastry #picture {
+    margin-top: 0px !important;
+  }
+  .synastry {
+    margin-top: -40px;
+  }
+  #nebo1,
+  #zemlia1,
+  #for_self1,
+  #male1,
+  #female1,
+  #socium1,
+  #duhovnoe1,
+  #planetarnoe1 {
+    line-height: 30px;
+  }
+  button[type="submit"],
+  button[type="button"] {
+    margin-top: 10px;
+  }
+}
+
+@media print {
+  body {
+    -webkit-print-color-adjust: exact !important;
+  }
+  #main-div {
+    margin-top: 0px;
+  }
+  #matrix-legend {
+    font-size: 70%;
+  }
+  #picture {
+    max-width: 95%;
+    margin-top: 20px;
+    position: relative;
+    left: -30px;
+    min-height: 95%;
+    height: 95%;
+    width: 95%;
+  }
+  #prednazn {
+    font-size: 60%;
+  }
+  .table td,
+  .table th {
+    padding: 0.25rem;
+  }
+  .health-map-table {
+    background: #f4f4f6 !important;
+    background-color: #f4f4f6 !important;
+    font-size: 60%;
+  }
+  .health-map-table td {
+    border-collapse: collapse !important;
+    border: 2px solid white !important;
+  }
+  .health-map-table tr:nth-child(2) td,
+  tr.child_2 td {
+    background: #993399 !important;
+    background-color: #993399 !important;
+    color: white !important;
+  }
+  .health-map-table tr:nth-child(3) td {
+    background: #3366ff !important;
+    color: white !important;
+  }
+  .health-map-table tr:nth-child(4) td {
+    background: #33ccff !important;
+    color: white !important;
+  }
+  .health-map-table tr:nth-child(5) td {
+    background: #66cc66 !important;
+    color: white !important;
+  }
+  .health-map-table tr:nth-child(6) td {
+    background: #ffff99 !important;
+    color: black !important;
+  }
+  .health-map-table tr:nth-child(7) td {
+    background: #ff9900 !important;
+    color: white !important;
+  }
+  .health-map-table tr:nth-child(8) td {
+    background: #cc3333 !important;
+    color: white !important;
+  }
+  .health-map-table tr:nth-child(9) td {
+    background: #cccccc !important;
+    color: black !important;
+    font-weight: bold !important;
+  }
+}
+
+@page {
+  size: a4 landscape;
+}
