@@ -165,34 +165,103 @@ async function getData() {
 
   document
     .querySelector(".calcDayPlus")
-    .insertAdjacentHTML("afterbegin", `${calcDay} `);
+    .insertAdjacentHTML("afterbegin", `${calcDay}`);
   document
     .querySelector(".calcDayMinus")
-    .insertAdjacentHTML("afterbegin", `${calcDay} `);
+    .insertAdjacentHTML("afterbegin", `${calcDay}`);
   document
     .querySelector(".calcMonthPlus")
-    .insertAdjacentHTML("afterbegin", `${calcMonth} `);
+    .insertAdjacentHTML("afterbegin", `${calcMonth}`);
   document
     .querySelector(".calcMonthMinus")
-    .insertAdjacentHTML("afterbegin", `${calcMonth} `);
+    .insertAdjacentHTML("afterbegin", `${calcMonth}`);
   document
     .querySelector(".calcYearPlus")
-    .insertAdjacentHTML("afterbegin", `${calcYear} `);
+    .insertAdjacentHTML("afterbegin", `${calcYear}`);
   document
     .querySelector(".calcYearMinus")
-    .insertAdjacentHTML("afterbegin", `${calcYear} `);
+    .insertAdjacentHTML("afterbegin", `${calcYear}`);
   document
     .querySelector(".dateToYearSumPlus")
-    .insertAdjacentHTML("afterbegin", `${dateToYearSum} `);
+    .insertAdjacentHTML("afterbegin", `${dateToYearSum}`);
   document
     .querySelector(".dateToYearSumMinus")
-    .insertAdjacentHTML("afterbegin", `${dateToYearSum} `);
+    .insertAdjacentHTML("afterbegin", `${dateToYearSum}`);
   document
     .querySelector(".allSumPlus")
-    .insertAdjacentHTML("afterbegin", `${allSum} `);
+    .insertAdjacentHTML("afterbegin", `${allSum}`);
   document
     .querySelector(".allSumMinus")
-    .insertAdjacentHTML("afterbegin", `${allSum} `);
+    .insertAdjacentHTML("afterbegin", `${allSum}`);
+
+  //image
+  document
+    .querySelector("#point-01") //А
+    .insertAdjacentHTML("afterbegin", `${calcDay}`);
+  document
+    .querySelector("#point-02") //Б
+    .insertAdjacentHTML("afterbegin", `${calcMonth}`);
+  document
+    .querySelector("#point-03") //В
+    .insertAdjacentHTML("afterbegin", `${calcYear}`);
+  document
+    .querySelector("#point-04") //Г = А + Б + В
+    .insertAdjacentHTML("afterbegin", `${dateToYearSum}`);
+  document
+    .querySelector("#point-05") //Д = А + Б + В + Г
+    .insertAdjacentHTML("afterbegin", `${allSum}`);
+  document
+    .querySelector("#point-06") //Е = А + Б
+    .insertAdjacentHTML("afterbegin", `${getBelow22(calcDay + calcMonth)}`);
+  document
+    .querySelector("#point-07") //Ж = Б + В
+    .insertAdjacentHTML("afterbegin", `${getBelow22(calcMonth + calcYear)}`);
+  document
+    .querySelector("#point-08") //И = В + Г
+    .insertAdjacentHTML(
+      "afterbegin",
+      `${getBelow22(calcYear + dateToYearSum)}`
+    );
+  document
+    .querySelector("#point-09") //З = А + Г
+    .insertAdjacentHTML("afterbegin", `${getBelow22(calcDay + dateToYearSum)}`);
+  document
+    .querySelector("#point-10") //К = Д + Г
+    .insertAdjacentHTML("afterbegin", `${getBelow22(allSum + dateToYearSum)}`);
+  document
+    .querySelector("#point-11") //Л = Д + В
+    .insertAdjacentHTML("afterbegin", `${getBelow22(allSum + calcYear)}`);
+  document
+    .querySelector("#point-12") //М = К + Л
+    .insertAdjacentHTML(
+      "afterbegin",
+      `${getBelow22(
+        getBelow22(allSum + dateToYearSum) + getBelow22(allSum + calcYear)
+      )}`
+    );
+  document
+    .querySelector("#point-13") //Н = К + М
+    .insertAdjacentHTML(
+      "afterbegin",
+      `${getBelow22(
+        getBelow22(allSum + dateToYearSum) +
+          getBelow22(
+            getBelow22(allSum + dateToYearSum) + getBelow22(allSum + calcYear)
+          )
+      )}`
+    );
+  document
+    .querySelector("#point-14") //О = М + Л
+    .insertAdjacentHTML(
+      "afterbegin",
+      `${getBelow22(
+        getBelow22(
+          getBelow22(allSum + dateToYearSum) +
+            getBelow22(allSum + calcYear) +
+            getBelow22(allSum + calcYear)
+        )
+      )}`
+    );
 }
 
 function resetData() {
