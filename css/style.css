@@ -5,25 +5,32 @@ body {
   /* background-color: black;
   color: white; */
 }
+
 .container {
-  padding-top: 20px;
+  /* padding-top: 20px; */
 }
+
 .btn {
   margin: 0 5px;
 }
+
 table,
 th,
 td {
   border: 1px solid black;
 }
+
 table {
   width: 100%;
 }
+
 @page {
   size: A4;
   margin: 0;
 }
+
 @media print {
+
   html,
   body {
     width: 210mm;
@@ -32,6 +39,7 @@ table {
     font-weight: 400;
     font-size: 12px;
   }
+
   th,
   td {
     border: 1px solid black;
@@ -39,25 +47,31 @@ table {
     /* overflow: hidden; */
   }
 }
+
 body1 {
   background-image: url(images/background.svg);
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center center; /* optionally, center the image */
+  background-position: center center;
+  /* optionally, center the image */
 }
+
 th,
 td {
   border: 1px solid black;
   width: 50%;
   /* overflow: hidden; */
 }
+
 .hidden {
   display: none;
 }
+
 legend {
   font-weight: bold;
   font-size: 48px;
 }
+
 .overlay {
   position: fixed;
   top: 0;
@@ -69,4 +83,29 @@ legend {
   color: white;
   padding: 10% 0;
   text-align: center;
+}
+
+body {
+  font-family: "Times New Roman", Georgia, Serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Playfair Display";
+  letter-spacing: 5px;
+}
+
+/* Styles for the pages */
+.page {
+  display: none;
+  padding: 70px 10px;
+  text-align: center;
+}
+
+.page.active {
+  display: block;
 }

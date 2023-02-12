@@ -85,7 +85,7 @@ async function getData() {
   console.log(
     `Calculated values: ${calcDay}, ${calcMonth}, ${calcYear}, ${dateToYearSum}, ${allSum}`
   );
-  const url = "./data.json";
+  const url = "./content/data.json";
   const res = await fetch(url);
   const data = await res.json();
 
@@ -245,9 +245,9 @@ async function getData() {
       "afterbegin",
       `${getBelow22(
         getBelow22(allSum + dateToYearSum) +
-          getBelow22(
-            getBelow22(allSum + dateToYearSum) + getBelow22(allSum + calcYear)
-          )
+        getBelow22(
+          getBelow22(allSum + dateToYearSum) + getBelow22(allSum + calcYear)
+        )
       )}`
     );
   document
@@ -257,8 +257,8 @@ async function getData() {
       `${getBelow22(
         getBelow22(
           getBelow22(allSum + dateToYearSum) +
-            getBelow22(allSum + calcYear) +
-            getBelow22(allSum + calcYear)
+          getBelow22(allSum + calcYear) +
+          getBelow22(allSum + calcYear)
         )
       )}`
     );
@@ -283,14 +283,13 @@ function exportHTML() {
   var fileDownload = document.createElement("a");
   document.body.appendChild(fileDownload);
   fileDownload.href = source;
-  fileDownload.download = `matrica_${
-    document.querySelector(".inputName").value
-  }.doc`;
+  fileDownload.download = `matrica_${document.querySelector(".inputName").value
+    }.doc`;
   fileDownload.click();
   document.body.removeChild(fileDownload);
 }
 
-// EvenListeners
+// EventListeners
 const calculateButton = document.querySelector(".calculate");
 calculateButton.addEventListener("click", () => {
   if (
@@ -356,3 +355,21 @@ function getLocalStorage() {
   }
 }
 window.addEventListener("load", getLocalStorage);
+
+const menuLinks = document.querySelectorAll(".menu a");
+const pages = document.querySelectorAll(".page");
+
+menuLinks.forEach(link => {
+  link.addEventListener("click", event => {
+    event.preventDefault();
+    const pageId = link.getAttribute("data-page");
+    pages.forEach(page => {
+      if (page.id === pageId) {
+        page.classList.toggle("active");
+      } else {
+        page.classList.remove("active");
+      }
+    });
+  });
+});
+
